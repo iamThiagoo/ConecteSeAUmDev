@@ -1,4 +1,12 @@
 /**
+ * This injects AOS (Animation on Scroll) in project
+ *
+ * You can see more in here:
+ * https://github.com/michalsnik/aos
+ */
+@import '/node_modules/aos/dist/aos.css';
+
+/**
  * This injects Tailwind's base styles, which is a combination of
  * Normalize.css and some additional base styles.
  *
