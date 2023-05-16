@@ -826,13 +826,13 @@ input:invalid, textarea:invalid, select:invalid {
 .bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
-.from-primary-100{
-  --tw-gradient-from: #FE3C72 var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(254 60 114 / 0) var(--tw-gradient-to-position);
+.from-\[\#2000ab\]{
+  --tw-gradient-from: #2000ab var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(32 0 171 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
-.to-secondary-100{
-  --tw-gradient-to: #FF7854 var(--tw-gradient-to-position);
+.to-\[\#00b2d5\]{
+  --tw-gradient-to: #00b2d5 var(--tw-gradient-to-position);
 }
 .fill-current{
   fill: currentColor;
