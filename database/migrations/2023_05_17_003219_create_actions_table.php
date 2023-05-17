@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('skills', function (Blueprint $table) {
+        Schema::create('actions', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->foreignId('category_id')->constrained();
+            $table->foreignId('from_user_id')->constrained('users');
+            $table->foreignId('to_user_id')->constrained('users');
+            $table->enum('name', ['LIKE', 'DISLIKE', 'SUPERLIKE']);
+            $table->date('expiration_at');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('skills');
+        Schema::dropIfExists('actions');
     }
 };
