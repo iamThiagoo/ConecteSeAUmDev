@@ -657,8 +657,20 @@ input:invalid, textarea:invalid, select:invalid {
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
  */
+.absolute{
+  position: absolute;
+}
 .relative{
   position: relative;
+}
+.left-0{
+  left: 0px;
+}
+.left-full{
+  left: 100%;
+}
+.top-0{
+  top: 0px;
 }
 .z-0{
   z-index: 0;
@@ -741,6 +753,13 @@ input:invalid, textarea:invalid, select:invalid {
 }
 .flex-shrink-0{
   flex-shrink: 0;
+}
+.skew-x-12{
+  --tw-skew-x: 12deg;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+.transform{
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 .cursor-default{
   cursor: default;
@@ -971,6 +990,9 @@ input:invalid, textarea:invalid, select:invalid {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+.duration-1000{
+  transition-duration: 1000ms;
 }
 .duration-150{
   transition-duration: 150ms;
