@@ -924,6 +924,12 @@ input:invalid, textarea:invalid, select:invalid {
 .p-4 {
   padding: 1rem;
 }
+.p-3 {
+  padding: 0.75rem;
+}
+.p-3\.5 {
+  padding: 0.875rem;
+}
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
