@@ -9,6 +9,7 @@ use App\Http\Livewire\Auth\Passwords\Reset;
 use App\Http\Livewire\Auth\Register;
 use App\Http\Livewire\Auth\Verify;
 use App\Http\Livewire\Components\SplashScreen;
+use App\Http\Livewire\Components\HomeScreen;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +23,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', SplashScreen::class)->name('home');
+Route::get('/', SplashScreen::class)->name('splash-screen');
+Route::get('/home', HomeScreen::class)->name('home');
 
 Route::middleware('guest')->group(function () {
     Route::get('login', Login::class)
