@@ -1,7 +1,7 @@
 <div>
     
     <div
-        class="absolute top-0 left-0 transform duration-1000 flex flex-col items-center justify-center min-h-screen w-full bg-gradient-to-r from-[#2000ab] to-[#00b2d5]"
+        class="absolute top-0 left-0 transform duration-1000 flex flex-col items-center justify-center min-h-screen w-full bg-gradient-to-r from-[#3338bb] to-[#00c7e7]"
     >
         <div class="flex flex-1 flex-col justify-end items-center mt-24">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-20 h-16 text-white">
@@ -18,13 +18,16 @@
                 Dolores iure, vel molestiae, ullam, odio beatae sint rem iusto odit velit esse adipisci!
             </p>
             <div>
-                <button class="border-2 border-white bg-white w-full p-4 mt-6 text-gray-100 text-sm rounded-full transform duration-150 active:scale-95">
-                    Criar uma conta
+                <button class="flex items-center justify-center border-solid border-2 border-white bg-white w-full p-4 mt-8 text-slate-500 text-sm uppercase font-semibold rounded-full transform duration-150 active:scale-95">
+                    <img src="{{ asset('images/svg/google.svg') }}" class="absolute left-3 w-7 h-7" />
+                    Entrar como Recrutador
                 </button>
 
-                <button class="border-solid border-2 border-white w-full p-4 mt-4 mb-8 text-white text-sm rounded-full transform duration-150 active:scale-95">
-                    Entrar
+                <button class="flex items-center justify-center border-2 border-zinc-900 bg-zinc-900 w-full p-4 mt-4 mb-8 text-white text-sm uppercase font-semibold rounded-full transform duration-150 active:scale-95">
+                    <img src="{{ asset('images/svg/github.svg') }}" class="absolute left-3 w-7 h-7" />
+                    Entrar como Dev
                 </button>
+
             </div>
         </div>
     </div>
