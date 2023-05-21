@@ -12,61 +12,14 @@ use App\Http\Livewire\Components\SplashScreen;
 use App\Http\Livewire\Components\HomeScreen;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
+use App\Http\Controllers\Auth\GithubController;
 
 Route::get('/', SplashScreen::class)->name('splash-screen');
 Route::get('/home', HomeScreen::class)->name('home');
-
-Route::middleware('guest')->group(function () {
-    Route::get('login', Login::class)
-        ->name('login');
-
-    Route::get('register', Register::class)
-        ->name('register');
-});
-
-Route::get('password/reset', Email::class)
-    ->name('password.request');
-
-Route::get('password/reset/{token}', Reset::class)
-    ->name('password.reset');
-
-Route::middleware('auth')->group(function () {
-    Route::get('email/verify', Verify::class)
-        ->middleware('throttle:6,1')
-        ->name('verification.notice');
-
-    Route::get('password/confirm', Confirm::class)
-        ->name('password.confirm');
-});
-
-Route::middleware('auth')->group(function () {
-    Route::get('email/verify/{id}/{hash}', EmailVerificationController::class)
-        ->middleware('signed')
-        ->name('verification.verify');
-
-    Route::post('logout', LogoutController::class)
-        ->name('logout');
-});
-
 
 // GitHub authentication
 Route::get('/auth/redirect', function () {
     return Socialite::driver('github')->redirect();
 })->name('auth.github');
 
-Route::get('/auth/github', function () {
-    $user = Socialite::driver('github')->user();
-
-    dd($user, $user->token);
-});
+Route::get('/auth/github', GithubController::class);
