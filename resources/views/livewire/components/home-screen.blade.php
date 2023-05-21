@@ -18,12 +18,18 @@
                 Dolores iure, vel molestiae, ullam, odio beatae sint rem iusto odit velit esse adipisci!
             </p>
             <div>
-                <button class="flex items-center justify-center border-solid border-2 border-white bg-white w-full p-4 mt-8 text-slate-500 text-sm uppercase font-semibold rounded-full transform duration-150 active:scale-95">
+                <button
+                    wire:click="loginWithGoogle" 
+                    class="flex items-center justify-center border-solid border-2 border-white bg-white w-full p-3.5 mt-8 text-slate-500 text-sm uppercase font-semibold rounded-full transform duration-150 active:scale-95"
+                    >
                     <img src="{{ asset('images/svg/google.svg') }}" class="absolute left-3 w-7 h-7" />
                     Entrar como Recrutador
                 </button>
 
-                <button class="flex items-center justify-center border-2 border-zinc-900 bg-zinc-900 w-full p-4 mt-4 mb-8 text-white text-sm uppercase font-semibold rounded-full transform duration-150 active:scale-95">
+                <button 
+                    wire:click="loginWithGithub"
+                    class="flex items-center justify-center border-2 border-zinc-900 bg-zinc-900 w-full p-3.5 mt-4 mb-8 text-white text-sm uppercase font-semibold rounded-full transform duration-150 active:scale-95"
+                    >
                     <img src="{{ asset('images/svg/github.svg') }}" class="absolute left-3 w-7 h-7" />
                     Entrar como Dev
                 </button>
