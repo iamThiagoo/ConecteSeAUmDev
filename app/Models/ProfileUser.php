@@ -9,7 +9,7 @@ class ProfileUser extends Model
     protected $fillable = [
         'user_id',
         'provider',
-        'auth_id',
+        'provider_user_id',
         'nickname',
         'avatar',
         'data',

@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\ProfileUser;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
@@ -28,7 +29,6 @@ class GithubController extends Controller
                     'email' => $user->email,
                 ], [
                     'name' => $user->name,
-                    'github_user' => $user->token,
                     'password' => Hash::make(Str::random(25))
                 ]);
 
@@ -36,17 +36,19 @@ class GithubController extends Controller
                     'user_id' => $this->authUser->id,
                 ], [
                     'provider' => self::PROVIDER,
-                    'auth_id' => $user->id,
+                    'provider_user_id' => $user->id,
                     'nickname' => $user->nickname,
                     'avatar' => $user->avatar,
                     'data' => json_encode($user->user)
                 ]);
             }, 3);
 
-            if (empty($this->authUser->interest()))
+            Auth::login($this->authUser);
+
+            if (empty($this->authUser->interest))
                 return redirect()->route('interests');
 
-            if (empty($this->authUser->preference()))
+            if (empty($this->authUser->preference))
                 return redirect()->route('preference');
 
             return redirect()->route('feed');

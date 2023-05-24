@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->enum('provider', ['GITHUB', 'GOOGLE']);
-            $table->string('auth_id');
+            $table->string('provider_user_id');
             $table->string('nickname')->nullable();
             $table->string('avatar')->nullable();
             $table->json('data');
