@@ -13,6 +13,7 @@ use App\Http\Livewire\Components\HomeScreen;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\Auth\GithubController;
+use App\Http\Controllers\GoogleController;
 
 Route::get('/', SplashScreen::class)->name('splash-screen');
 Route::get('/home', HomeScreen::class)->name('home');
@@ -23,3 +24,10 @@ Route::get('/auth/redirect', function () {
 })->name('auth.github');
 
 Route::get('/auth/github', GithubController::class);
+
+// Google authentication
+Route::get('/google/redirect', function () {
+    return Socialite::driver('google')->redirect();
+})->name('auth.google');
+
+Route::get('/auth/google', GoogleController::class);

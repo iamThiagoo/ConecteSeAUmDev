@@ -13,7 +13,7 @@ class HomeScreen extends Component
 
     public function loginWithGoogle ()
     {
-
+        return redirect()->route('auth.google');
     }
 
     public function render()
