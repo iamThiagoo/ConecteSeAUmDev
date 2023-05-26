@@ -10,6 +10,9 @@ use App\Http\Livewire\Auth\Register;
 use App\Http\Livewire\Auth\Verify;
 use App\Http\Livewire\Components\SplashScreen;
 use App\Http\Livewire\Components\HomeScreen;
+use App\Http\Livewire\Components\InterestScreen;
+use App\Http\Livewire\Components\PreferenceScreen;
+use App\Http\Livewire\Components\FeedScreen;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\Auth\GithubController;
@@ -17,6 +20,10 @@ use App\Http\Controllers\GoogleController;
 
 Route::get('/', SplashScreen::class)->name('splash-screen');
 Route::get('/home', HomeScreen::class)->name('home');
+
+Route::get('/interests', InterestScreen::class)->name('interests');
+Route::get('/preferences', PreferenceScreen::class)->name('preferences');
+Route::get('/feed', FeedScreen::class)->name('feed');
 
 // GitHub authentication
 Route::get('/auth/redirect', function () {

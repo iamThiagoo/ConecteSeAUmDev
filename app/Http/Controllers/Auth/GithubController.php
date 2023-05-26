@@ -49,7 +49,7 @@ class GithubController extends Controller
                 return redirect()->route('interests');
 
             if (empty($this->authUser->preference))
-                return redirect()->route('preference');
+                return redirect()->route('preferences');
 
             return redirect()->route('feed');
             
