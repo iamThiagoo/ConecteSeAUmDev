@@ -79,4 +79,10 @@ class User extends Authenticatable
     {
         return $this->hasMany(Message::class, 'to_user_id', 'id');
     }
+
+    //
+    public function profile () : HasOne
+    {
+        return $this->hasOne(ProfileUser::class);
+    }
 }

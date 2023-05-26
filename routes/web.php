@@ -21,9 +21,12 @@ use App\Http\Controllers\GoogleController;
 Route::get('/', SplashScreen::class)->name('splash-screen');
 Route::get('/home', HomeScreen::class)->name('home');
 
-Route::get('/interests', InterestScreen::class)->name('interests');
-Route::get('/preferences', PreferenceScreen::class)->name('preferences');
-Route::get('/feed', FeedScreen::class)->name('feed');
+// Auth
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/interests', InterestScreen::class)->name('interests');
+    Route::get('/preferences', PreferenceScreen::class)->name('preferences');
+    Route::get('/feed', FeedScreen::class)->name('feed');
+});
 
 // GitHub authentication
 Route::get('/auth/redirect', function () {
