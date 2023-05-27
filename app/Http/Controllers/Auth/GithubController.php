@@ -37,7 +37,7 @@ class GithubController extends Controller
                 ], [
                     'provider' => self::PROVIDER,
                     'provider_user_id' => $user->id,
-                'nickname' => $user->nickname,
+                    'nickname' => $user->nickname,
                     'avatar' => $user->avatar,
                     'data' => json_encode($user->user)
                 ]);
