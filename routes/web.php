@@ -16,7 +16,7 @@ use App\Http\Livewire\Components\FeedScreen;
 use Illuminate\Support\Facades\Route;
 use Laravel\Socialite\Facades\Socialite;
 use App\Http\Controllers\Auth\GithubController;
-use App\Http\Controllers\GoogleController;
+use App\Http\Controllers\Auth\GoogleController;
 
 Route::get('/', SplashScreen::class)->name('splash-screen');
 Route::get('/home', HomeScreen::class)->name('home');

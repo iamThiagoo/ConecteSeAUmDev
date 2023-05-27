@@ -22,7 +22,7 @@ class GithubController extends Controller
     public function __invoke () : RedirectResponse
     {
         try {
-            $user = Socialite::drive('github')->user();
+            $user = Socialite::driver('github')->user();
 
             DB::transaction(function () use ($user) {
                 $this->authUser = User::updateOrCreate([
@@ -37,7 +37,7 @@ class GithubController extends Controller
                 ], [
                     'provider' => self::PROVIDER,
                     'provider_user_id' => $user->id,
-                    'nickname' => $user->nickname,
+                'nickname' => $user->nickname,
                     'avatar' => $user->avatar,
                     'data' => json_encode($user->user)
                 ]);

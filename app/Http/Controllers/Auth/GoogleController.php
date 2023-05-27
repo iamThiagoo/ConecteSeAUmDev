@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use App\Models\ProfileUser;
 use App\Models\User;
 use Illuminate\Http\RedirectResponse;
@@ -21,7 +22,7 @@ class GoogleController extends Controller
     public function __invoke () : RedirectResponse
     {
         try {
-            $user = Socialite::drive('github')->user();
+            $user = Socialite::driver('google')->user();
 
             DB::transaction(function () use ($user) {
                 $this->authUser = User::updateOrCreate([
