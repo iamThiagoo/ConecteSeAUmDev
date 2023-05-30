@@ -81,6 +81,7 @@
     <div class="container w-11/12 px-4 mx-auto sm:w-8/12 lg:w-5/12 2xl:w-3/12">
         <div class="flex w-full sm:px-0">
             <button 
+                wire:click="save"
                 role="submit" 
                 aria-label="Salvar" 
                 class="relative flex items-center justify-center w-full px-8 py-3 text-base font-medium text-white duration-150 ease-in-out transform bg-blue-600 border-0 rounded-md focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none active:scale-95 hover:bg-blue-500"
@@ -100,11 +101,15 @@
         {
             return {
                 categories: @entangle('categories'),
-                payload: {},
+                payload: @entangle('payload'),
                 changeSkill (selectedCategory, event)
                 {
                     const category = this.categories.find((item) => item.name === selectedCategory)
                     const skill = category.skills.find(item => item.id === parseInt(event.target.value))
+
+                    if(!this.payload) {
+                        this.payload = {};
+                    }
 
                     if (skill) {
                         if(this.payload.hasOwnProperty(selectedCategory)) {
