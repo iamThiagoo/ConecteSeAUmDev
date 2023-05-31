@@ -2,7 +2,8 @@
     <div class="pt-4 lg:mt-8">
         <div class="flex flex-col items-center justify-center mx-auto mt-2 lg:w-5/12 2xl:w-3/12">
             <div class="flex justify-end w-full">
-                <button 
+                <button
+                    wire:click="skipScreen"
                     role="button" 
                     aria-label="cancel form" 
                     class="px-3 py-2 mr-2 text-base text-blue-600 transition duration-150 ease-in-out rounded focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 lg:px-0"
@@ -12,7 +13,7 @@
             </div>
             <div class="w-full mx-auto">
                 <div class="flex items-center justify-center rounded">
-                    <div class="flex items-center justify-center w-24 h-24 bg-center bg-no-repeat bg-cover rounded-full shadow">
+                    <div class="flex items-center justify-center h-28 w-28 bg-center bg-no-repeat bg-cover rounded-full shadow">
                         <img src="{{ $user['profile']['avatar'] }}" alt="Minha foto de perfil" class="top-0 bottom-0 left-0 right-0 z-0 object-cover w-full h-full rounded-full shadow" />
                     </div>
                 </div>

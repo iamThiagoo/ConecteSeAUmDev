@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Components;
 
 use App\Models\Category;
+use Illuminate\Http\RedirectResponse;
 use Livewire\Component;
 
 class InterestScreen extends Component
@@ -20,6 +21,15 @@ class InterestScreen extends Component
     public function render()
     {
         return view('livewire.components.interest-screen');
+    }
+
+    public function skipScreen () : RedirectResponse
+    {
+        if (empty($this->user->preference)){
+            return redirect()->route('preferences');
+        }
+
+        return redirect()->route('feed');
     }
 
     public function save ()
